@@ -67,7 +67,6 @@ def setup():
         
     ht()
     writer = Turtle()
-   # writer.mode("logo")
     writer.ht()
     writer.pu()
     writer.bk(85)
@@ -91,7 +90,7 @@ def tick():
     minute = t.minute + sekunde/60.0
     stunde = t.hour + minute/60.0
     try:
-        tracer(False)  # Terminator can occur here
+        tracer(False)  
         writer.clear()
         writer.home()
         writer.forward(65)
@@ -102,13 +101,13 @@ def tick():
                      align="center", font=("Courier", 14, "bold"))
         writer.forward(85)
         tracer(True)
-        second_hand.setheading(6*sekunde)  # or here
+        second_hand.setheading(6*sekunde) 
         minute_hand.setheading(6*minute)
         hour_hand.setheading(30*stunde)
         tracer(True)
         ontimer(tick, 100)
     except Terminator:
-        pass  # turtledemo user pressed STOP
+        pass 
 
 def main():
     tracer(False)
